@@ -1,6 +1,6 @@
 # MarkPad
 
-A markdown reader and editor for Mac. Opens any `.md` file and shows it formatted. All editing happens through toolbar buttons — you never have to write markdown syntax.
+A markdown reader and editor for Mac. Opens any `.md` file and shows it formatted. All editing happens through toolbar buttons, no need for writing markdown syntax.
 
 ## Install
 
