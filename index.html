@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>MarkPad</title>
+  <link rel="stylesheet" href="node_modules/@toast-ui/editor/dist/toastui-editor.css" />
+  <link rel="stylesheet" href="node_modules/@toast-ui/editor/dist/theme/toastui-editor-dark.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="titlebar">
+    <div id="titlebar-drag"></div>
+    <div id="file-info">
+      <span id="file-name" title="Click to rename">Untitled.md</span>
+      <span id="dirty-dot" hidden>●</span>
+    </div>
+    <div id="actions">
+      <button id="btn-sidebar" title="Show/hide sidebar">☰</button>
+      <button id="btn-new" title="New file (⌘N)">＋ New</button>
+      <button id="btn-open" title="Open a markdown file (⌘O)">📂 Open</button>
+      <button id="btn-save" title="Save (⌘S)">💾 Save</button>
+      <div class="menu-wrap">
+        <button id="btn-more" title="More file actions">⋯</button>
+        <div id="more-menu" hidden>
+          <button id="btn-save-as">Save As…</button>
+          <button id="btn-rename">Rename…</button>
+          <button id="btn-reveal">Show in Finder</button>
+          <hr />
+          <button id="btn-mode">View raw Markdown</button>
+          <hr />
+          <button id="btn-trash" class="danger">Move to Trash</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="main">
+    <div id="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-heading">Recent</div>
+        <div id="recent-list" class="file-list"></div>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-heading">
+          <span id="sidebar-folder-name">Folder</span>
+          <button id="btn-choose-folder" title="Browse a different folder">📁</button>
+        </div>
+        <div id="folder-list" class="file-list"></div>
+      </div>
+    </div>
+    <div id="editor"></div>
+  </div>
+
+  <div id="toast" hidden></div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

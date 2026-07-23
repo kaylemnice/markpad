@@ -1,0 +1,5 @@
+node_modules/
+dist/
+renderer.js
+icon.iconset/
+.DS_Store

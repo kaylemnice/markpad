@@ -1,0 +1,54 @@
+{
+  "name": "markpad",
+  "productName": "MarkPad",
+  "version": "1.0.0",
+  "description": "A friendly markdown reader & editor — all editing via buttons, no markdown syntax required.",
+  "main": "main.js",
+  "scripts": {
+    "bundle": "esbuild src/renderer.js --bundle --format=iife --platform=browser --outfile=renderer.js",
+    "start": "npm run bundle && electron .",
+    "build": "npm run bundle && electron-builder --mac"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0",
+    "esbuild": "^0.28.1"
+  },
+  "dependencies": {
+    "@toast-ui/editor": "^3.2.2"
+  },
+  "build": {
+    "appId": "com.kaylemnice.markpad",
+    "productName": "MarkPad",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer.js",
+      "index.html",
+      "styles.css",
+      "icon.icns",
+      "node_modules/@toast-ui/**/*"
+    ],
+    "mac": {
+      "target": "dir",
+      "category": "public.app-category.productivity",
+      "icon": "icon.icns",
+      "fileAssociations": [
+        {
+          "ext": [
+            "md",
+            "markdown",
+            "mdown",
+            "mkd"
+          ],
+          "name": "Markdown Document",
+          "role": "Editor",
+          "rank": "Owner"
+        }
+      ]
+    }
+  }
+}
